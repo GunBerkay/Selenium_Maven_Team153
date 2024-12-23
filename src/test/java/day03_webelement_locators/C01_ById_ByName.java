@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_ById {
+public class C01_ById_ByName {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver=new ChromeDriver();
@@ -20,6 +20,7 @@ public class C01_ById {
 
          // arama kutusunu locate edip, kaydedin
         WebElement aramaKutusu= driver.findElement(By.id("global-search"));
+
 
         // arama kutusuna phone yazdirin
         aramaKutusu.sendKeys("phone");
