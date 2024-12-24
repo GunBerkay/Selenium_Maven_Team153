@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class homework_2 {
     public static void main(String[] args) {
@@ -22,22 +23,19 @@ public class homework_2 {
         driver.get("https://www.automationexercise.com/");
 
 //        3- Category bolumundeki elementleri locate edin
-        WebElement womenElement =driver.findElement(By.xpath("//a[normalize-space()='Women']"));
-        WebElement menElement = driver.findElement(By.xpath("//a[normalize-space()='Men']"));
-        WebElement kidsElement = driver.findElement(By.xpath("//a[normalize-space()='Kids']"));
+        List<WebElement> denemeList = driver.findElements(By.className("panel-heading"));
 
 //        4- Category bolumunde 3 element oldugunu test edin
-        if (womenElement.isDisplayed() &&
-                menElement.isDisplayed() &&
-                kidsElement.isDisplayed())
-        {
-            System.out.println("Category bolumu 3 element testi PASSED");
-        }else System.out.println("Category bolumu 3 element testi FAILED");
+        int expectedSonuc=3;
+        int actualSonuc= denemeList.size();
+        if (actualSonuc==expectedSonuc){
+            System.out.println("Category element sayisi testi PASSED");
+        }else System.out.println("Category element sayisi testi FAILED");
 
 //        5- Category isimlerini yazdirin
-        System.out.println("Category 1: " + womenElement.getText());
-        System.out.println("Category 2: " + menElement.getText());
-        System.out.println("Category 3: " + kidsElement.getText());
+        for (WebElement eachDeneme :denemeList){
+            System.out.println(eachDeneme.getText());
+        }
 
 //        6- Sayfayi kapatin
         driver.quit();
