@@ -30,6 +30,7 @@ public class C02_ByClassName {
         //arama sonucunda urun bulunabildiğini test edin
         String aramaSonucYazisi=aramaSonucYaziElementi.getText();
         aramaSonucYazisi=aramaSonucYazisi.replaceAll("\\D","");
+
         int aramaSonucSayisi=Integer.parseInt(aramaSonucYazisi);
 
         if (aramaSonucSayisi>0){

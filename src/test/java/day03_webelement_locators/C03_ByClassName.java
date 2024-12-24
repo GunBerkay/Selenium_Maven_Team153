@@ -46,7 +46,7 @@ public class C03_ByClassName {
 
         //acilan urun sayfasindaki urun isimince
         // case sensitive olmadan "phone gectigini test edin "
-        String expectedIsimIcerik="phhone";
+        String expectedIsimIcerik="phone";
         WebElement urunDetayElementi = driver.findElement(By.className("prod-detail"));
         String urunDetayi=urunDetayElementi.getText().toLowerCase();
 
